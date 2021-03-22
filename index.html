@@ -471,10 +471,8 @@
             <div class="form-group">
               <input name="image" type="file" id="file" class="form-input" accept="image/*">
             </div>
-            <button 
-            data-sitekey="6LeWMooaAAAAAKTmIw-T-pFHakrUb8RZMaGtRu7G" 
-            data-callback='onSubmit' 
-            data-action='submit' type="submit" id="btnSubmit" class=" g-recaptcha btn btn-primary" name="btnSubmit">Verstuur!</button>
+            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+            <button type="submit" id="btnSubmit" class="btn btn-primary" name="btnSubmit">Verstuur!</button>
           </form>
           <div id="thankyou">
             <h1>Bedankt!</h1>
@@ -503,12 +501,6 @@
 
   <!--JS-->
   <script src="js/scripts.js"></script>
-  <script>
-    function onSubmit(token) {
-      console.log(token);
-      document.getElementById("demo-form").submit();
-    }
-  </script>
-
+  
   </body>
 </html>
