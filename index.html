@@ -17,6 +17,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
   </head>
   <body>
 
@@ -89,8 +92,11 @@
         <div class="col-lg-6 col-md-12">
           <video class="video-fluid z-depth-1 float-right" autoplay loop controls muted>
             <source src="img/info.mp4" type="video/mp4" />
+           
           </video>
+         
         </div>
+        
       </div>
   </section>
 
@@ -465,7 +471,10 @@
             <div class="form-group">
               <input name="image" type="file" id="file" class="form-input" accept="image/*">
             </div>
-            <button type="submit" id="btnSubmit" class="btn btn-primary" name="btnSubmit">Verstuur!</button>
+            <button 
+            data-sitekey="6LeWMooaAAAAAKTmIw-T-pFHakrUb8RZMaGtRu7G" 
+            data-callback='onSubmit' 
+            data-action='submit' type="submit" id="btnSubmit" class=" g-recaptcha btn btn-primary" name="btnSubmit">Verstuur!</button>
           </form>
           <div id="thankyou">
             <h1>Bedankt!</h1>
@@ -494,5 +503,12 @@
 
   <!--JS-->
   <script src="js/scripts.js"></script>
+  <script>
+    function onSubmit(token) {
+      console.log(token);
+      document.getElementById("demo-form").submit();
+    }
+  </script>
+
   </body>
 </html>
